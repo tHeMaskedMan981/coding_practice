@@ -10,20 +10,28 @@ class Node:
         self.left = None
         self.right = None
   
-  
+level_elements = []
+
 # Function to  print level order traversal of tree 
 def printLevelOrder(root): 
+    global level_elements
     h = height(root) 
+    
     for i in range(1, h+1): 
-        printGivenLevel(root, i) 
+        printGivenLevel(root, i)
+        print(level_elements)
+        level_elements = [] 
   
   
 # Print nodes at a given level 
 def printGivenLevel(root , level): 
+    global level_elements
     if root is None: 
         return
     if level == 1: 
-        print(root.data)
+        # print(root.data)
+        level_elements.append(root.data)
+        # print(level_elements)
     elif level > 1 : 
         printGivenLevel(root.left , level-1) 
         printGivenLevel(root.right , level-1) 
@@ -51,7 +59,7 @@ root.left = Node(2)
 root.right = Node(3) 
 root.left.left = Node(4) 
 root.left.right = Node(5) 
-  
+root.right.left = Node(6)
 print ("Level order traversal of binary tree is -")
 printLevelOrder(root) 
   
