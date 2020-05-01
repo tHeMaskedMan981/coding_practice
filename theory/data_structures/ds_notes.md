@@ -9,13 +9,16 @@
 - slow access. Have to traverse the linked list. O(n)
 - fast insertion and deletion. O(1)
 
+## Python List 
+- copy, insert, delete, min, max, x in s, -  O(n)
+- append, get, set, len - O(1)
+- extend - O(k)
 
+## Queue 
 
-### Queue 
+## Stack
 
-### Stack
-
-### Binary Tree
+## Binary Tree
 
 ## Binary search Tree
 
@@ -25,6 +28,18 @@
 ## Hash Tables 
 - Hash table is an array, that stores pointers to records. The indexes are calculated using an efficient hash function. Like a direct access table, but more space efficient
 - search time : avg - O(1), worst case - O(n). 
+- implemented as map in C++. 
+    - include map, iterator
+    - map<int,int> map1
+    - map1.insert(pair<int,int>(233,1))
+    - map1.find(key), if(itr!=map1.end()) itr->second
+
+- implemented as dict in python
+    - key for a dict can be an immutable(hashable) object - ie. it cant be a dict,set or list. tuple, int, str works. 
+    - if dont want keyerror, use defaultdict
+    - from collections import defaultdict
+    - d = defaultdict(default_factory), a function which return the default value if key is not present
+    - d = defaultdict(int), default value initialized to 0. can also use defaultdict(list). d[1] = [].
 - solutions for collision - 
 
 - Seperate chaining - each cell of hash table point to linked list of records with same hash value
@@ -42,6 +57,7 @@
     - Double hashing have more computation, but avoids clustering. 
     - No extra space required as in chaining. 
     - search, insert, delete - (1/(1-a)), a - load factor
+
 ## Direct access table 
 - a big array, with id as index. like phone number. fast search, insert and delete - O(1). But requires a lot of space. Not feasible always
 
@@ -55,3 +71,22 @@
 - heap sort uses binary heap to sort an array in O(nlogn)
 - Priority queue can be efficiently implemented using binary heap. 
 - insert, delete, extractMax - all in O(logn)
+
+## Sets
+- implemented in python as set()
+    - set([1,2,3,2,1]) = set([1,2,3])
+    - it is unordered and unindexed. can access elements using for loop. Cant use indexes to access elements. 
+    - unhashable - cant be used as a key in dict
+    - faster to search for an element compared to list. 
+
+
+## Python tips
+- To count the frequencies of elements in an iterables, use freq = collections.Counter(itr). returns dict
+- To sort items of dict, add them to a list of tuples. sort the list. can sort with any key. sorted(tup, key = lambda x: x[1], reverse = True). (tup - list of tuples)
+    - dict.items() returns list of tuples. 
+    - sorted(dict) returns list of sorted keys.
+    - sorted(dict, key=dict.get) returns list of keys sorted by values.  
+- can use tuples as dict keys. can convert list into tuples easily. 
+- to make the elements of a list unique, unique_list = list(set(list1)). works if elements of list are hashable. 
+- \* can be used to repeat elements in list, tuple and strings. set and dict dont support * with int. 
+- if have to delete an item from list, swap it with the last element, and then use pop. faster. 

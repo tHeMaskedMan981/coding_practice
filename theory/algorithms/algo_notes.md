@@ -27,3 +27,47 @@
 - used with graphs and trees
 - a stack is used to implement dfs
 - Time complexity - O(V+E)
+- Can try to convert problems to dfs which dont look like dfs in the first look
+
+
+
+
+
+
+### Matching brackets problem
+- Use a stack. most easy way. 
+- See if 
+
+
+### Use of Hash Tables 
+- keep track of visited elements in a matrix 
+- nth fibonacci number. to optimize, store the values already computed in hash tables. 
+- memorization, caching techniques. 
+- 
+
+### Multiple variable, pointer manipulation
+- traversing through a string(linked-list) from both ends. 
+- longest palindromic substring in a string. traverse through the main string, at each character, spread out with 2 pointers to see if a palindrome is possible.
+
+### reversing a linked-list 
+- alt version - detecting if there is a cycle in a linked list 
+- have to use 3 pointers to solve the problem. 
+
+### Recursion
+- rarely used in production
+- indicator of problem-solving skills
+
+### constructing custom data structures
+- suffix tree - capture bunch of strings, 
+- not everything is  about algorithms, sometimes its just basic coding. 
+
+### Binary search 
+- have to know. 
+
+### Sliding window algorithm 
+- used for mostly string type questions. 
+- helps to reduce the number of iterations, and in avoiding unnecessary checks. 
+
+## Python tips
+- sorted() - sorts any iterable object and returns a list of sorted objects
+- 

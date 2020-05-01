@@ -11,31 +11,34 @@ class Node:
 
 
 class Solution(object):
+
+    def __init__(self):
+        self.level_elements = []
+
     def isSymmetric(self, root):
 
         h = self.height(root) 
-        level_elements = []
+        
         for i in range(1, h+1): 
             self.printGivenLevel(root, i) 
-            num = len(level_elements)
+            num = len(self.level_elements)
+            print(self.level_elements)
             for i in range(0, int((num+1)/2)):
-                if level_elements[i]!=level_elements[(num-1)-i]:
+                if self.level_elements[i]!=self.level_elements[(num-1)-i]:
                     return False
-            level_elements = []
+            self.level_elements = []
         return True
 
 
-
-    # Function to  print level order traversal of tree 
-    def printLevelOrder(self,root): 
-        pass
     
     # Print nodes at a given level 
     def printGivenLevel(self,root , level): 
         if root is None: 
+            self.level_elements.append('null')
             return
         if level == 1: 
-            print(root.data)
+            # print(root.data)
+            self.level_elements.append(root.data)
         elif level > 1 : 
             self.printGivenLevel(root.left , level-1) 
             self.printGivenLevel(root.right , level-1) 
@@ -59,7 +62,8 @@ root.left = Node(2)
 root.right = Node(3) 
 root.left.left = Node(4) 
 root.left.right = Node(5) 
-  
+root.right.right = Node(6)
+
 print ("Level order traversal of binary tree is -")
 Solution().isSymmetric(root)
 # printLevelOrder(root) 
