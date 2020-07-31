@@ -79,7 +79,9 @@
     - unhashable - cant be used as a key in dict
     - faster to search for an element compared to list. 
 
-
+### Strings C++
+- str6.find(str4) != string::npos. for checking if substring present. returns index of occurence
+- 
 ## Python tips
 - To count the frequencies of elements in an iterables, use freq = collections.Counter(itr). returns dict
 - To sort items of dict, add them to a list of tuples. sort the list. can sort with any key. sorted(tup, key = lambda x: x[1], reverse = True). (tup - list of tuples)
@@ -90,3 +92,20 @@
 - to make the elements of a list unique, unique_list = list(set(list1)). works if elements of list are hashable. 
 - \* can be used to repeat elements in list, tuple and strings. set and dict dont support * with int. 
 - if have to delete an item from list, swap it with the last element, and then use pop. faster. 
+- string built in fuctions in python are written in c, so using them directly will be faster.
+- max(dict) returns key with highest position in sorted keys. max(dict, key=dict.get) returns the key with highest value 
+- can use & | for sets as well. can use these for intersection and union operations. 
+- if a immutable object is changed inside a function, it no longer can reference to a global object. It will always point to a local object.
+- For mutable oject like list, append, pop, individual access and changes doesnt change the object. But performing list1+=list2 changes the list and doesnt reference to the global object anymore. 
+
+## C++ tips 
+- dict is normally faster, but sometimes using array might be better if length and the type of characters are known. indexes work faster than hashes
+-  returns index of first occurence - str.find(substr)
+-  returns number of occurences - count(str.begin(), str.end(), substr)
+- string & integer : 
+    - string to integer - stoi
+    - integer to string - to_string
+    - int to binary (fixed size) - bitset< size >(i).to_string()
+    - for sum of vector elements - accumulate(v.begin(), v.end(), initial_sum)
+- map is implemented as BST, for ordering of keys. complexity is O(n). unordered map is implemented as hash table. O(1).
+- primitive datatypes are undefined if not initialized. but map have default values to 0.

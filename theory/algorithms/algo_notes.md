@@ -66,8 +66,12 @@
 
 ### Sliding window algorithm 
 - used for mostly string type questions. 
-- helps to reduce the number of iterations, and in avoiding unnecessary checks. 
+- helps to reduce the number of iterations, and in avoiding unnecessary checks which are already done in previous iteration. 
 
 ## Python tips
 - sorted() - sorts any iterable object and returns a list of sorted objects
+- 
+
+## C++ tips
+- always think if the problem can be simplified with sorting first. but only do it if cant solve the problem in better than O(nlogn)
 - 
