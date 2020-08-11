@@ -8,6 +8,7 @@
 ## Linked List 
 - slow access. Have to traverse the linked list. O(n)
 - fast insertion and deletion. O(1)
+- dont need continuous block of memory
 
 ## Python List 
 - copy, insert, delete, min, max, x in s, -  O(n)
@@ -78,6 +79,19 @@
     - it is unordered and unindexed. can access elements using for loop. Cant use indexes to access elements. 
     - unhashable - cant be used as a key in dict
     - faster to search for an element compared to list. 
+
+## AVL Trees
+- A self balancing binary search tree
+- balance factor = height(left subtree) - height(right subtree). This value is always in {-1, 0, 1}
+- require rotation to balance the tree again in case of insertion or deletion. Look for the first unbalanced node and start balancing from there. In insertion, normally one rotation is enough
+- 4 cases - 
+    - left left case (balance factor > 1 and key < root.left.val)
+    - left right case (balance factor > 1 and key > root.left.val)
+    - right right case (balance factor < -1 and key > root.right.val)
+    - right left case (balance factor < -1 and key < root.right.val)
+- Red Black trees are also used as self balancing binary search trees. Used in maps and sets in C++. Requires less rotations while inserting and deleting compared to AVL trees.
+- If application requires more searches, use AVL Trees
+- If application requires more insertion and deletion, use Red black trees.
 
 ### Strings C++
 - str6.find(str4) != string::npos. for checking if substring present. returns index of occurence
