@@ -10,10 +10,12 @@
 - fast insertion and deletion. O(1)
 - dont need continuous block of memory
 
+
 ## Python List 
 - copy, insert, delete, min, max, x in s, -  O(n)
 - append, get, set, len - O(1)
 - extend - O(k)
+- list1 = [...] changes the object itself. list1[:] = list2 or list1[:] = list2[:] copies the elements to existing list. 
 
 ## Queue 
 
@@ -63,6 +65,13 @@
 - a big array, with id as index. like phone number. fast search, insert and delete - O(1). But requires a lot of space. Not feasible always
 
 ## Heap 
+- complete binary tree. full till height h-1, in last level, elements left aligned. 
+- index from 0, children are 2i+1 and 2i+2. parent is [(c-1)/2]
+- Inserting takes O(1) in best case and O(logn) in worst case
+- Deleting takes O(logn)
+- Heap sort - add the elements in an heap, nlogn, then remove them one by one. 
+
+
 
 ### Binary heap
 - binary heap is a complete binary tree. It have all the elements towards the left. It is implemented using an array (space efficient). 
@@ -71,7 +80,14 @@
 - traversal method is level order
 - heap sort uses binary heap to sort an array in O(nlogn)
 - Priority queue can be efficiently implemented using binary heap. 
-- insert, delete, extractMax - all in O(logn)
+- delete - O(logn)
+- insert - O(logn) in worst case, O(1) in best case.
+- while creating a heap from an existing array, there are 2 ways - start from i=0 and use siftup on all the elements, or start from i = n-1 and use sift down on all the elements. siftup is efficient for elements towards the top, siftdown is more efficient for elements towards the bottom. as elements towards the bottom is more in number, therefore using siftdown from the end is more efficient approach to build heap. 
+- only one node is at the top whereas half the nodes lie in the bottom layer. So it shouldn't be too surprising that if we have to apply an operation to every node, we would prefer siftDown over siftUp
+- Heapify - building heap from existing array - using siftdown from end towards the start - O(n).
+- If want to make a max heap, multiply every number with -1 and make a min heap using heapq. 
+- If want to find kth largest, just create a min heap of size k. therefore heap[0] will always be kth largest. Can use nlargest to get k largest elements and then add them in a min heap
+- If want to find kth smallest, just create a max heap of size k. multiply every element with -1 to use heapq to make max heap. Then only add to the heap if it is required, else leave. this way heap is of max size k.
 
 ## Sets
 - implemented in python as set()
@@ -93,6 +109,15 @@
 - If application requires more searches, use AVL Trees
 - If application requires more insertion and deletion, use Red black trees.
 
+## Priority Queue 
+- Supports getMax, extractMax, insert and delete operations
+- Can be implemented using heap or BST. Heap is preferred for following reasons -
+    - heap is implemented using arrays. better locality of reference and cache friendly operations
+    - Although operations are of same time complexity, constants in Binary Search Tree are higher.
+    - We can build a Binary Heap in O(n) time. Self Balancing BSTs require O(nLogn) time to construct.
+    - Binary Heap doesn’t require extra space for pointers.
+    - Binary Heap is easier to implement.
+
 ### Strings C++
 - str6.find(str4) != string::npos. for checking if substring present. returns index of occurence
 - 
@@ -111,7 +136,8 @@
 - can use & | for sets as well. can use these for intersection and union operations. 
 - if a immutable object is changed inside a function, it no longer can reference to a global object. It will always point to a local object.
 - For mutable oject like list, append, pop, individual access and changes doesnt change the object. But performing list1+=list2 changes the list and doesnt reference to the global object anymore. 
-
+- If have to sort a list based on multiple characteristics - use key as list of parameters in order - let l = [word1, word2, word3] be the list of words. If have to sort based on frequency, and then alphabatically, use     sorted(l, key = lambda word: (-count[word], word))
+- For copying a list, can use newlist = oldlist[:]. just doing newlisst = oldlist only creates a reference. 
 ## C++ tips 
 - dict is normally faster, but sometimes using array might be better if length and the type of characters are known. indexes work faster than hashes
 -  returns index of first occurence - str.find(substr)
