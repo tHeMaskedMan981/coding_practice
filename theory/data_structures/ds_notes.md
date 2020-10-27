@@ -9,13 +9,13 @@
 - slow access. Have to traverse the linked list. O(n)
 - fast insertion and deletion. O(1)
 - dont need continuous block of memory
-
+- if in a problem head can be removed, create a dummy node which points to head. finally return dummy.next or dummy.next.next
 
 ## Python List 
 - copy, insert, delete, min, max, x in s, -  O(n)
 - append, get, set, len - O(1)
 - extend - O(k)
-- list1 = [...] changes the object itself. list1[:] = list2 or list1[:] = list2[:] copies the elements to existing list. 
+- list1 = [...] changes the list object itself. list1[:] = list2 or list1[:] = list2[:] copies the elements to existing list. 
 
 ## Queue 
 

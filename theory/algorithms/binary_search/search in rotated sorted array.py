@@ -1,6 +1,4 @@
 
-
-
 def search(nums, target):
     if len(nums)==1:
         if nums[0]==target: return 0

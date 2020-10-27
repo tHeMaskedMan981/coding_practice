@@ -77,9 +77,9 @@
 
 ## Python tips
 - sorted() - sorts any iterable object and returns a list of sorted objects
-- map can be used if a certain function is to be applied to each element of an iterable - map(func, iterable)
+- map can be used if a certain function is to be applied to each element of an iterable - map(func, iterable). however, map returns a map object. To actually evaluate it, use list(map(insert,arr))
 - itertools.combinations(iterable, size) can be used to get all combinations
 
 ## C++ tips
-- always think if the problem can be simplified with sorting first. but only do it if cant solve the problem in better than O(nlogn)
+- always think if the problem can be simplified with sorting first. but only do it if can't solve the problem in better than O(nlogn)
 - 
